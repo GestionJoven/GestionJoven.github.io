@@ -30,10 +30,10 @@ var pre = (document.createElement('div').style['WebkitTransform'] != undefined) 
 var useSwipe = false;
 var pageMode = 'csv';
 var pageW = 1366, pageH = 2000;
-var multifile = false;
+var multifile = true;
 var isLiquid = (pageMode.indexOf('liquid') != -1), flip = (pageMode.indexOf('flip') != -1) && !multifile;
 var arrowNav = false;
-var lazyLoad = true;
+var lazyLoad = false;
 var scaleMode = 'none_desktop';
 var webAppType = '';
 var useTracker = false;
@@ -836,7 +836,7 @@ function getOrientation() {
 }
 
 function addNavProps(){
-	if(nav.numPages === undefined) nav.numPages=2;
+	if(nav.numPages === undefined) nav.numPages=12;
 	nav.rtl = $('#slider').attr('data-dir') == 'rtl';
 	if(nav.rtl) $('html').attr('data-dir', 'rtl');
 	nav.first = function(){nav.to(1)};
